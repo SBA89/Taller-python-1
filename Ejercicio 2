@@ -1,0 +1,44 @@
+import os
+os.system('cls')
+var_totalFlt = 0
+cons_computador_escritorioInt = 500
+cons_computadorInt = 450
+cons_tabletasInt = 300
+cons_videobeam = 50
+cons_televisores = 300
+
+var_cantidad_computador_escritorioInt = 0
+var_cantidad_computadorInt = 0
+var_cantidad_tabletasInt = 0
+var_cantidad_videobemasInt = 0
+var_cantidad_televisoresInt = 0
+var_controlBln = True
+while var_controlBln == True:
+    var_opcionStr =int(input('- - Seleccione los productos por comprar - -\n\n1. Computadores de escritorios\n2. Computadores\n3. Tabletas\n4. Videobeams\n5. Televisores\n6. Generar Factura\n->'))
+    
+    if var_opcionStr >= 1 and var_opcionStr <= 5:
+        var_cantidadInt = int(input('Cantidad\n->'))
+    if var_opcionStr == 1:
+        var_totalFlt += (var_cantidadInt * cons_computador_escritorioInt)
+        var_cantidad_computador_escritorioInt += var_cantidadInt
+    if var_opcionStr == 2:
+        var_totalFlt += (var_cantidadInt * cons_computadorInt)
+        var_cantidad_computadorInt += var_cantidadInt
+    if var_opcionStr == 3:
+        var_totalFlt += (var_cantidadInt * cons_tabletasInt)
+        var_cantidad_tabletasInt += var_cantidadInt
+    if var_opcionStr == 4:
+        var_totalFlt += (var_cantidadInt * cons_videobeam)
+        var_cantidad_videobemasInt += var_cantidadInt
+    if var_opcionStr == 5:
+        var_totalFlt += (var_cantidadInt * cons_televisores)
+        var_cantidad_televisoresInt += var_cantidadInt
+    os.system('cls')
+    if var_opcionStr == 6:
+        print('<<< DETALLES DE SU COMPRA >>>')
+        print('CANTIDAD TOTAL DE PRODUCTOS.................... ',var_cantidadInt)
+        print('EL TOTAL A PAGAR DE SU COMPRA ES............... $',var_totalFlt)
+        print(f'<<< CANTIDAD DE PRODUCTOS COMPRADOS >>>\n\nComputadores de Escritorio = {var_cantidad_computador_escritorioInt}\nComputadores = {var_cantidad_computadorInt}\nTabletas = {var_cantidad_tabletasInt}\nVideobeams = {var_cantidad_videobemasInt}\nTelevisores = {var_cantidad_televisoresInt}')
+        var_controlBln = False
+        
+    
