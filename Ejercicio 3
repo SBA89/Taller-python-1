@@ -1,20 +1,23 @@
+codigoInt = int(input('codigo: '))
+nombreStr = input('Nombre: ')
+existenciasInt = 0
+controlBln = True
 import os
-os.system('cls')
-print('<<< TE DAMOS LA BIENVENIDA A TU SUPERMERCADO >>>')
-print('ABRIENDO TU INVENTARIO...')
-
-var_inventarioInt = int(input('- - SELECCIONE SU ACCIÓN - -\n\n1. Comprar productos\n2. Vender productos\n-->'))
-os.system('cls')
-if var_inventarioInt == 1:
-    var_productoStr = input('INGRESE EL NOMBRE DEL PRODUCTO\n-->')
-    var_codigo_del_productoInt = int(input('INGRESE EL CODIGO DEL PRODUCTO\n-->'))
-    var_cantidadInt =int(input('INGRESE LA CANTIDAD DE PRODUCTOS DESEADOS\n-->'))
-    
-if var_inventarioInt == 2:
-    var_controlBln = True
-    while var_controlBln == True:
-        print('ESTOS SON SUS PRODUCTOS ACTUALMENTE\n\nProductos                 Cantidad             Codigo\n1. Docena de huevos          5                  001\n2. Bolsa de leche            3                  002\n3. Cereal                    6                  003\n4. Libra de Arroz            2                  004\n5. Platano                   8                  005')
-        var_venta_productoInt = int(input('SELECCIONE LOS PRODUCTOS QUE DESEAS VENDER \n\n1. Docena de huevos\n2. Bolsa de leche\n3. Cereal\n4. Libra de Arroz\n5. Platano\n6. SALIR'))
-        if var_venta_productoInt >= 1 and var_venta_productoInt <= 5:
-            var_cantidadInt = int(input('Cantidad\n->'))
+while controlBln == True:
+    os.system('cls')
+    print('codigo: ', codigoInt, '\nNombre: ', nombreStr,'\nExistencias: ', existenciasInt)
+    opcionStr = input('1. Compras\n2. Ventas\n3. Reportes\n--> ')
+    cantidadInt = int(input('Cantidad: '))
+    if opcionStr == '1':
+        existenciasInt += cantidadInt
+    if opcionStr == '2':
+        if cantidadInt <= existenciasInt:
+            existenciasInt -= cantidadInt
+        else:
+            print('No hay suficientes existentes')
+        enter = input('<ENTER>')
+    if opcionStr == '3':
+        print('Cantidad actual de inventario:', existenciasInt)
+    if opcionStr == '4':
+        controlBln = False
     
