@@ -1,28 +1,10 @@
-def contar_numeros_en_rango(numeros):
-    numeros_en_rango = 0
+cantidadInt = int(input('¿Cantidad de números?\n-->'))
+contadorInt = 1
+contadornumerosInt = 0
 
-    for var_numero in numeros:
-        if 10 <= var_numero <= 20:
-            numeros_en_rango += 1
-
-    return numeros_en_rango
-
-def main():
-    try:
-        n = int(input("Ingrese la cantidad de números a capturar: "))
-
-        numeros = []
-
-        for i in range(n):
-            var_numero = float(input(f"Ingrese el número {i + 1}: "))
-            numeros.append(var_numero)
-
-        numeros_en_rango = contar_numeros_en_rango(numeros)
-
-        print(f"\nCantidad de números en el rango de 10 a 20: {numeros_en_rango}")
-
-    except ValueError:
-        print("Error: Ingrese un valor numérico válido.")
-
-if __name__ == "__main__":
-    main()
+while contadorInt <= cantidadInt:
+    numeroInt = int(input('Ingrese un número\n-->'))
+    if numeroInt >= 10 and numeroInt<= 20:
+        contadornumerosInt += 1
+    contadorInt += 1
+print('La cantidad de número en el rango de 10 a 20 son: ',contadornumerosInt)    
